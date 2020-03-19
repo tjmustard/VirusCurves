@@ -35,7 +35,7 @@ for i in range(1, phase1):
 phase2 = 30 #<---- EDIT THIS NUMBER
 phase2_gr_orig = growth_rate
 #This is the change in growth rate per day 0.01 is 1% change
-gr_flux = 0.001 #<---- EDIT THIS NUMBER
+gr_flux = 0.005 #<---- EDIT THIS NUMBER
 for i in range(1, phase2):
     x.append(x[-1] + 1)
     growth_rate -= gr_flux
@@ -54,7 +54,7 @@ y_7pc = f(xall, a_, b_, c_, d_) * 0.07
 
 #Labels for the graph
 
-sick = "w/{3} day induction period\nCurrent Growth Rate: {0}%\nChange in GR/day: {1}%\nSick: {2:n}".format(round((phase1_gr_orig-1)*100), round((gr_flux * -100), 3), int(round(f(xall[-1], a_, b_, c_, d_))), phase1)
+sick = "w/{3} day induction period\nInitial Growth Rate: {0}%\nChange in GR/day: {1}%\nSick: {2:n}".format(round((phase1_gr_orig-1)*100), round((gr_flux * -100), 3), int(round(f(xall[-1], a_, b_, c_, d_))), phase1)
 Tsick = AnchoredText(sick, loc=2)
 pc1357 = "Deaths Rates:\n7.0%: {3:n}\n5.0%: {2:n}\n3.0%: {1:n}\n1.0%: {0:n}\n0.1%: {4:n}".format(int(round(f(xall[-1], a_, b_, c_, d_) * 0.01, 0)),
                                                      int(round(f(xall[-1], a_, b_, c_, d_) * 0.03, 0)),
