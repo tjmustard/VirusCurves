@@ -11,19 +11,19 @@ def f(x, a, b, c, d):
     return a / (1. + np.exp(-c * (x - d))) + b
 
 #Days since first reported case:
-x_orig = [0, 3, 4, 5, 9, 10, 11, 12, 15, 30, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56]
+x_orig = [0, 3, 4, 5, 9, 10, 11, 12, 15, 30, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58]
 #Confirmed cases of COVID19
-y_orig = [1, 2, 3, 5, 6, 7, 8, 11, 12, 14, 15, 15, 19, 24, 42, 57, 85, 111, 175, 252, 353, 497, 645, 936, 1205, 1598, 2163, 2825, 3497, 4372, 5637]
+y_orig = [1, 2, 3, 5, 6, 7, 8, 11, 12, 14, 15, 15, 19, 24, 42, 57, 85, 111, 175, 252, 353, 497, 645, 936, 1205, 1598, 2163, 2825, 3497, 4372, 5656, 8054, 11980]
 
 x = x_orig.copy()
 y = y_orig.copy()
 
 #Growth Phase 1
 #It is known that 2019-nCov has an incubation period of ~5-14 days
-#So actions today will not change the growth rate for ~14 days
-phase1 = 12 #<---- EDIT THIS NUMBER
+#So actions today will not change the growth rate for ~5-14 days
+phase1 = 4 #4 days since statewide shutdowns <---- EDIT THIS NUMBER
 #Currect Growth rate is 30% or an increase of 1.3x perday
-growth_rate = 1.3 #<---- EDIT THIS NUMBER
+growth_rate = 1.4 #<---- EDIT THIS NUMBER
 phase1_gr_orig = growth_rate
 for i in range(1, phase1):
     x.append(x[-1] + 1)
